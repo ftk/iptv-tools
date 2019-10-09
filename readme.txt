@@ -29,6 +29,12 @@ You can:
 - search for stream using keyboard
 - adjust volume (kp plus, kp minus)
 
+* Script for getting live streams from AceStream broadcasting engine (acesearch.pl)
+More info about acestream at:
+http://acestream.org/
+http://wiki.acestream.org/wiki/index.php/Download
+https://github.com/pepsik-kiev/HTTPAceProxy (HTTP proxy - optional)
+
 Dependencies:
 For perl scripts:
 apt-get install libxml-twig-perl libutf8-all-perl libtimedate-perl libdbd-sqlite3-perl libdbi-perl libcgi-pm-perl libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl

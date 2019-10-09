@@ -26,7 +26,7 @@ while ( <> ) {
 
     chomp;
     next unless /^#EXTINF:/;
-    my @p = split /,/;
+    my @p = split(/,/, $_, 2);
 
     my @args = shellwords($p[0]);
 
@@ -37,6 +37,9 @@ while ( <> ) {
     $opts{name} = $p[1];
     
     my $url = <>;
+
+    while($url =~ /^#/) { $url = <>; }
+
     chomp $url;
     $opts{url} = $url;
     
@@ -46,9 +49,6 @@ while ( <> ) {
         $opts{$kv[0]} = $kv[1];
     }
     # m3u parsed!
-
-    # remove junk from channel name
-    $opts{name} =~ s/\Q (на модерации)\E$//;
 
     # print channels as tab separated values (tsv-file)
     # you can modify to add your fields
