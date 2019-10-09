@@ -18,7 +18,7 @@ my $category = param('c');
 
 use strict;
 use v5.22;
-use CGI  qw/:standard /;
+use CGI  qw/:standard -utf8/;
 use utf8;
 
 sub normalize {

@@ -37,7 +37,7 @@ https://github.com/pepsik-kiev/HTTPAceProxy (HTTP proxy - optional)
 
 Dependencies:
 For perl scripts:
-apt-get install libxml-twig-perl libutf8-all-perl libtimedate-perl libdbd-sqlite3-perl libdbi-perl libcgi-pm-perl libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl
+apt-get install libxml-twig-perl libutf8-all-perl libtimedate-perl libdbd-sqlite3-perl libdbi-perl libcgi-pm-perl libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl libjson-perl
 For bash scripts:
 apt-get install gawk bash curl socat
 For gssdp-discover (if your DLNA device changes port/address)
