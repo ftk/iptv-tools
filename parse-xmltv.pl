@@ -79,6 +79,8 @@ XML::Twig->new(twig_handlers =>
                { 
                    # assume <channel> tags are always before <programme>
                    'tv/channel' => sub { 
+                       my( $t, $_) = @_;
+
                        my $id = $_->{att}->{id};
                        #my $name = $_->first_child('display-name')->text;
                        # TODO: one channel id may refer to multiple channel names
@@ -87,8 +89,10 @@ XML::Twig->new(twig_handlers =>
                            next if ($filter_enabled && !defined($filter{normalize($n->text)}));
                            $channels{$id} = normalize($n->text);
                        }
+                       $t->purge;
                    },
                        'tv/programme' => sub {
+                           my( $t, $_) = @_;
                            my $ch = $channels{$_->{att}->{channel}};
                            
                            if (!defined($ch)) {
@@ -111,6 +115,7 @@ XML::Twig->new(twig_handlers =>
                                          $_->first_child('category') ? $_->first_child('category')->text : undef, 
                                          $_->first_child('desc') ? $_->first_child('desc')->text : undef
                                );
+                           $t->purge;
                    }
                }
     )
